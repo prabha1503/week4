@@ -1,0 +1,28 @@
+-> create Dockerfile in root path of springboot project
+
+-> run mvn clean install 
+
+
+From docker.repository.esi.adp.com/clientcentral/java:17.0.1-jdk
+EXPOSE 8087
+copy ./target/xxx.jar xxx.jar
+CMD ["java","-jar","xxx.jar"]
+
+
+-> to build image
+
+docker image build -t xxx-app .
+
+-> to create container locally
+
+docker container run --name xxx-app -p 8087:8087 -d xxx-app
+
+docker ps -a 
+
+-> to display logs of container created 
+
+docker container logs xxx-app
+
+docker container logs -f xxx-app
+
+docker container rm name -f     -> to remove container

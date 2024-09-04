@@ -1,0 +1,37 @@
+docker --version
+
+docker images
+
+docker ps -a
+
+
+steps:
+
+mkdir  java-app 
+
+----> create CustomerApp.java
+
+class CustomerApp{  
+public static void main(String[] args){  
+System.out.println("This is CustomerApp app \n by using Docker");  
+}  
+}  
+
+create Dockerfile in same folder:
+----->create Dockerfile
+
+FROM docker.repository.esi.adp.com/clientcentral/java:17.0.1-jdk  
+COPY . /var/www/java  
+WORKDIR /var/www/java  
+RUN javac CustomerApp.java  
+CMD ["java", "CustomerApp"]   
+
+--------> move the the java-docker-app folder 
+
+creating image
+ 
+docker image build -t java-app .
+
+docker run java-app   
+
+docker run java-app   -> local container running

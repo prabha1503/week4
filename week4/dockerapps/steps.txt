@@ -1,0 +1,31 @@
+docker and Kubernetes
+
+https://minikube.sigs.k8s.io/docs/start/
+https://howtodoinjava.com/devops/deploy-dockerized-spring-boot-app-to-minikube/
+
+download minikube installer 
+minkube status
+minikube start
+
+
+kubectl apply -f deployment.yaml
+kubectl get deployments
+kubectl get pods
+kubectl get logs
+kubectl apply -f service.yaml
+kubectl get svc
+kubectl get nodes -o wide
+
+kubectl get po -A
+minikube kubectl -- get po -A
+minikube kubectl -- help  -need to follow steps in help
+minikube kubectl -- get pods --namespace kube-system
+
+kubectl version
+
+
+minikube dashboard
+minikube start
+minikube stop
+minikube kubectl -- get po -A
+minikube dashboard 
